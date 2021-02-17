@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+    <arg name="x" default="0.0" />
+    <arg name="y" default="0.0" />
+    <arg name="z" default="0.65" />
+    <arg name="roll" default="0.0"/>
+    <arg name="pitch" default="0.0"/>
+    <arg name="yaw" default="0.0"/>
+    <arg name="postgres_log" default="false" />
+    <arg name="model" default="$(find dogbot_description)/urdf/dogbot.xacro"/>
+    <arg name="namespace" default="dogbot" />
+    <arg name="paused" default="true"/>
+
+    <group ns="$(arg namespace)">
+        <include file="$(find dogbot_gazebo)/launch/dog.launch">
+            <arg name="postgres_log" value="$(arg postgres_log)" />
+            <arg name="model" value="$(arg model)" />
+            <arg name="paused" value="$(arg paused)"/>
+            <arg name="x" value="$(arg x)" />
+            <arg name="y" value="$(arg y)" />
+            <arg name="z" value="$(arg z)" />
+            <arg name="roll" value="$(arg roll)"/>
+            <arg name="pitch" value="$(arg pitch)"/>
+            <arg name="yaw" value="$(arg yaw)" />
+        </include>
+    </group>
+
+    <include file="$(find dogbot_gait)/launch/gait.launch"/>
+
+    <include file="$(find dogbot_markers)/launch/world_to_base_tf_publish.launch"/>
+
+
+</launch>

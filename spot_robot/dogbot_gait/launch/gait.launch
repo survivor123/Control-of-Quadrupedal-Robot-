@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+
+<!-- gait.launch -->  
+<!-- 2019 React Robotics Ltd -->  
+<!-- Charles Galambos, charles@reactrobotics.com -->  
+
+<!-- 
+-->  
+
+<launch>
+   
+  <node name="dogbot_gait_node" pkg="dogbot_gait" type="dogbot_gait_node"  >
+    <param name="omega" value="5.5" />
+  </node>
+ 
+</launch>

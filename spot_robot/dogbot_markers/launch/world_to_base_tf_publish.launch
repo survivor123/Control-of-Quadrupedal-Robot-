@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+    <node name="publisher_of_world_base_tf_node"
+        pkg="dogbot_markers"
+        type="world_to_base_tf_publisher.py"
+        respawn="false"
+        output="screen">
+    </node>
+</launch>
